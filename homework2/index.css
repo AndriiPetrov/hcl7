@@ -1,0 +1,25 @@
+body{
+    counter-reset: counter1;
+}
+
+h1{
+    counter-reset: counter2;
+}
+
+h1::before{
+    counter-increment: counter1;
+    content: "Раздел: " counter(counter1) ". ";
+}
+h1::first-letter{
+    font-size: 40px;
+    color: green;
+}
+
+h2::before{
+    counter-increment: counter2;
+    content: "Подраздел: " counter(counter1) "." counter(counter2) " ";
+}
+h2::selection{
+    color: red;
+    background: blue;
+}
